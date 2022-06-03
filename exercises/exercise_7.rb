@@ -10,3 +10,12 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+puts "input a store name"
+store_name = gets
+@store3 = Store.create(name: store_name)
+if @store3.errors.any?
+  @store3.errors.each do |error|
+    print "#{error.attribute} "
+    puts error.message
+  end
+end
